@@ -1,0 +1,44 @@
+
+hello_world.hello:
+  path: '/hello_world/hello'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+    _title: 'Hello World Custom Page 1'
+  requirements:
+    _permission: 'access content'
+
+hello_world.world:
+  path: '/hello_world/world/{name}'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::world'
+    _title: 'Hello World Custom Page 2'
+  requirements:
+    _permission: 'world page'
+
+hello_world.testpage:
+  path: '/hello_world/testpage'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::testpage'
+    _title: 'Hello World Custom Page 3'
+  requirements:
+    _permission: 'access content'
+
+hello_world.hello_world_config_form:
+  path: '/admin/config/hello_world/helloworldconfig'
+  defaults:
+    _form: '\Drupal\hello_world\Form\HelloWorldConfigForm'
+    _title: 'Hello World Config Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+
+hello_world.hello_world_custom_form:
+  path: 'hello_world/customform'
+  defaults:
+    _form: '\Drupal\hello_world\Form\HelloWorldCustomForm'
+    _title: 'Hello World Custom Form'
+  requirements:
+    _access: 'TRUE'
+  
